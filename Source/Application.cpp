@@ -3,6 +3,7 @@
 #include "ModuleWindow.h"
 #include "ModuleOpenGL.h"
 #include "ModuleInput.h"
+#include "ModuleProgram.h"
 
 using namespace std;
 
@@ -12,6 +13,7 @@ Application::Application()
 	modules.push_back(window = new ModuleWindow());
 	modules.push_back(render = new ModuleOpenGL());
 	modules.push_back(input = new ModuleInput());
+	modules.push_back(program = new ModuleProgram());
 }
 
 Application::~Application()
