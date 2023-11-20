@@ -14,7 +14,7 @@ ModuleOpenGL::~ModuleOpenGL()
 {
 }
 
-//Callback error function
+//Callback debug function
 void __stdcall OurOpenGLErrorFunction(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam)
 {
 	const char* tmp_source = "", * tmp_type = "", * tmp_severity = "";
