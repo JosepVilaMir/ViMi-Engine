@@ -12,6 +12,8 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -23,8 +25,6 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
-
-
 
 
 # Visual Studio 2015/2017 cache/options directory
@@ -334,4 +334,4 @@ ASALocalRun/
 
 !/Source/SDL/lib/x64/
 !/Source/SDL/lib/x86/
-!/Source/glew-2.1.0/lib/Release/
+
