@@ -26,6 +26,7 @@ public:
     ModuleWindow* GetWindow() { return window; }
     ModuleInput*  GetInput() { return input; }
     ModuleProgram* GetProgram() { return program; }
+    ModuleRenderExercise* GetRenderExercise() { return renderExercise; }
 
 private:
 
@@ -33,6 +34,7 @@ private:
     ModuleWindow* window = nullptr;
     ModuleInput* input = nullptr;
     ModuleProgram* program = nullptr;
+    ModuleRenderExercise* renderExercise = nullptr;
 
     std::list<Module*> modules;
 
