@@ -7,9 +7,9 @@ public:
 	ModuleProgram();
 	~ModuleProgram();
 
-	void CreateProgram();
+	unsigned int CreateProgram(const char* vertexPath, const char* fragmentPath);
 
 private:
-
+	unsigned int program;
 };
 
