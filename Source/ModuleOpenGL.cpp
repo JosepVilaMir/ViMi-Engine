@@ -87,26 +87,17 @@ bool ModuleOpenGL::Init()
 
 update_status ModuleOpenGL::PreUpdate()
 {
-	int w, h;
-	SDL_GetWindowSize(App->GetWindow()->window, &w, &h);
-	glViewport(0, 0, w, h);
-	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 	return UPDATE_CONTINUE;
 }
 
 // Called every draw update
 update_status ModuleOpenGL::Update()
 {
-
 	return UPDATE_CONTINUE;
 }
 
 update_status ModuleOpenGL::PostUpdate()
 {
-	SDL_GL_SwapWindow(App->GetWindow()->window);
-
 	return UPDATE_CONTINUE;
 }
 
