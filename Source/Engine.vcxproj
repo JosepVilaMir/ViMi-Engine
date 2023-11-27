@@ -164,6 +164,10 @@
     <ClInclude Include="ModuleRenderExercise.h" />
     <ClInclude Include="ModuleWindow.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\triangle.fs" />
+    <None Include="Shaders\triangle.vs" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
