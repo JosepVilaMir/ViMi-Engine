@@ -61,6 +61,9 @@ update_status ModuleEditor::Update()
         ImGui::Text("counter = %d", counter);
         ImGui::End();
     }
+
+    ImGui::ShowDemoWindow();
+
     // Rendering
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
