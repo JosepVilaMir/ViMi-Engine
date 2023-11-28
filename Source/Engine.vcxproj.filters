@@ -30,6 +30,7 @@
     <ClCompile Include="imgui-1.90\include\imgui_widgets.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
+    <ClCompile Include="ModuleEditor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
@@ -68,6 +69,7 @@
     <ClInclude Include="imgui-1.90\include\imstb_truetype.h">
       <Filter>imgui</Filter>
     </ClInclude>
+    <ClInclude Include="ModuleEditor.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Shaders">

@@ -58,7 +58,7 @@ bool ModuleOpenGL::Init()
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8); // we want to have a stencil buffer with 8 bits
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_DEBUG_FLAG); // Request a debug context.
 
-	SDL_GL_CreateContext(App->GetWindow()->window);
+	context = SDL_GL_CreateContext(App->GetWindow()->window);
 
 	GLenum err = glewInit();
 	// … check for errors
@@ -98,6 +98,7 @@ update_status ModuleOpenGL::Update()
 
 update_status ModuleOpenGL::PostUpdate()
 {
+	SDL_GL_SwapWindow(App->GetWindow()->window);
 	return UPDATE_CONTINUE;
 }
 
@@ -115,5 +116,10 @@ bool ModuleOpenGL::CleanUp()
 
 void ModuleOpenGL::WindowResized(unsigned width, unsigned height)
 {
+}
+
+void* ModuleOpenGL::GetContext()
+{
+	return context;
 }
 
