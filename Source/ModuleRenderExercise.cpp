@@ -16,20 +16,21 @@ ModuleRenderExercise::~ModuleRenderExercise()
 
 bool ModuleRenderExercise::Init()
 {
-    //Triangle definition
+    // Triangle definition
     float vertices[] = {
-    -0.5f, -0.5f, 0.0f,
-     0.5f, -0.5f, 0.0f,
-     0.0f,  0.5f, 0.0f
+    -1, -1, 0,
+     1, -1, 0,
+     0,  1, 0
     };
 
-    shaderProgram = App->GetProgram()->CreateProgram("../Source/Shaders/triangle.vs", "./../Source/Shaders/triangle.fs");
-
+    // Loads a triangle into a VBO
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+
+    // Creates a program with Hello World vertex and fragment shaders
+    shaderProgram = App->GetProgram()->CreateProgram("../Source/Shaders/triangle.vs", "./../Source/Shaders/triangle.fs");
 
     glUseProgram(shaderProgram);
 
@@ -41,10 +42,8 @@ update_status ModuleRenderExercise::PreUpdate()
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    // draw our first triangle
-    glUseProgram(shaderProgram);
+    // Renders VBO triangle using Hello World program
     glDrawArrays(GL_TRIANGLES, 0, 3);
-    // glBindVertexArray(0); // no need to unbind it every time 
 
     return UPDATE_CONTINUE;
 }
