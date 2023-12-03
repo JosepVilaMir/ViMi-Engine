@@ -30,7 +30,7 @@ bool ModuleRenderExercise::Init()
     glEnableVertexAttribArray(0);
 
     // Creates a program with Hello World vertex and fragment shaders
-    shaderProgram = App->GetProgram()->CreateProgram("../Source/Shaders/triangle.vs", "./../Source/Shaders/triangle.fs");
+    shaderProgram = App->GetProgram()->CreateProgram("Shaders/triangle.vs", "Shaders/triangle.fs");
 
     glUseProgram(shaderProgram);
 

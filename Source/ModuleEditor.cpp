@@ -2,7 +2,6 @@
 #include "Application.h"
 #include "ModuleWindow.h"
 #include "ModuleOpenGL.h"
-#include "imgui-1.90/include/imgui.h"
 #include "imgui-1.90/backends/imgui_impl_sdl2.h"
 #include "imgui-1.90/backends/imgui_impl_opengl3.h"
 
@@ -45,24 +44,8 @@ update_status ModuleEditor::PreUpdate()
 
 update_status ModuleEditor::Update()
 {
-    {
-        static float f = 0.0f;
-        static int counter = 0;
-
-        ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
-
-        ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-
-        ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-
-        if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-            counter++;
-        ImGui::SameLine();
-        ImGui::Text("counter = %d", counter);
-        ImGui::End();
-    }
-
-    ImGui::ShowDemoWindow();
+    ShowLogWindow();
+    ShowMainMenuBar();
 
     // Rendering
     ImGui::Render();
@@ -79,4 +62,34 @@ bool ModuleEditor::CleanUp()
     ImGui::DestroyContext();
 
     return true;
+}
+
+void ModuleEditor::AddLog(const char* text)
+{
+    logWindow.AddLog(text);
+}
+
+void ModuleEditor::ShowLogWindow()
+{
+    ImGui::SetNextWindowSize(ImVec2(500, 400), ImGuiCond_FirstUseEver);
+    ImGui::Begin("Console");
+    ImGui::End();
+
+    // Actually call in the regular Log helper (which will Begin() into the same window as we just did)
+    logWindow.Draw("Console");
+}
+
+void ModuleEditor::ShowMainMenuBar()
+{
+    if (ImGui::BeginMainMenuBar())
+    {
+        if (ImGui::BeginMenu("File"))
+        {
+            if (ImGui::MenuItem("GitHub page")) {}
+            if (ImGui::MenuItem("About")) {}
+            if (ImGui::MenuItem("Quit")) {}
+            ImGui::EndMenu();
+        }
+        ImGui::EndMainMenuBar();
+    }
 }
