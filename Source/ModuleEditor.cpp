@@ -7,6 +7,7 @@
 
 ModuleEditor::ModuleEditor()
 {
+    fps_log = std::vector<float>(50);
 }
 
 ModuleEditor::~ModuleEditor()
@@ -44,9 +45,10 @@ update_status ModuleEditor::PreUpdate()
 
 update_status ModuleEditor::Update()
 {
+    fps_log.push_back(1.0f / ImGui::GetIO().DeltaTime);
     ShowLogWindow();
     ShowMainMenuBar();
-
+    ShowConfigWindow();
     // Rendering
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -92,4 +94,14 @@ void ModuleEditor::ShowMainMenuBar()
         }
         ImGui::EndMainMenuBar();
     }
+}
+
+void ModuleEditor::ShowConfigWindow()
+{
+    ImGui::SetNextWindowSize(ImVec2(450, 400), ImGuiCond_FirstUseEver);
+    ImGui::Begin("Configuration");
+    char title[25];
+    sprintf_s(title, 25, "Framerate %.1f", fps_log[fps_log.size() - 1]);
+    ImGui::PlotHistogram("##framerate", &fps_log[0], fps_log.size(), 0, title, 0.0f, 100.0f, ImVec2(310, 100));
+    ImGui::End();
 }

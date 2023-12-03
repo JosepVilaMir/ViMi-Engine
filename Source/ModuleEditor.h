@@ -141,8 +141,9 @@ public:
 
 private:
     AppLog logWindow;
+    std::vector<float> fps_log;
 	void ShowLogWindow();
     void ShowMainMenuBar();
-    
+    void ShowConfigWindow();
 };
 
