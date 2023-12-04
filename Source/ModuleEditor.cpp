@@ -45,7 +45,7 @@ update_status ModuleEditor::PreUpdate()
 
 update_status ModuleEditor::Update()
 {
-    fps_log.push_back(1.0f / ImGui::GetIO().DeltaTime);
+    UpdateFPSData();
     ShowLogWindow();
     ShowMainMenuBar();
     ShowConfigWindow();
@@ -104,4 +104,15 @@ void ModuleEditor::ShowConfigWindow()
     sprintf_s(title, 25, "Framerate %.1f", fps_log[fps_log.size() - 1]);
     ImGui::PlotHistogram("##framerate", &fps_log[0], fps_log.size(), 0, title, 0.0f, 100.0f, ImVec2(310, 100));
     ImGui::End();
+}
+
+void ModuleEditor::UpdateFPSData()
+{
+    float fps = 1.0f / ImGui::GetIO().DeltaTime;
+    fps_log.push_back(fps);
+
+    // If the vector is full, remove the oldest data point
+    if (fps_log.size() > 100) {
+        fps_log.erase(fps_log.begin());
+    }
 }

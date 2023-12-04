@@ -145,5 +145,6 @@ private:
 	void ShowLogWindow();
     void ShowMainMenuBar();
     void ShowConfigWindow();
+    void UpdateFPSData();
 };
 
