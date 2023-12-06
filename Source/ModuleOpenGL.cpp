@@ -4,6 +4,7 @@
 #include "ModuleWindow.h"
 #include "SDL.h"
 #include <GL/glew.h>
+#include "MathGeoLib/include/MathGeoLib.h"
 
 ModuleOpenGL::ModuleOpenGL()
 {

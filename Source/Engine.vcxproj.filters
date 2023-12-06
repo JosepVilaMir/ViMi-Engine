@@ -70,6 +70,9 @@
       <Filter>imgui</Filter>
     </ClInclude>
     <ClInclude Include="ModuleEditor.h" />
+    <ClInclude Include="MathGeoLib\include\MathGeoLib.h">
+      <Filter>MathGeoLib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Shaders">
@@ -77,6 +80,9 @@
     </Filter>
     <Filter Include="imgui">
       <UniqueIdentifier>{a287138d-e5e5-4eb0-8877-43781a8566c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathGeoLib">
+      <UniqueIdentifier>{d42dee1e-4678-4eac-a178-54fd48e31619}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
