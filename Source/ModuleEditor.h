@@ -138,6 +138,7 @@ public:
 	update_status Update();
 	bool CleanUp();
     void AddLog(const char* text);
+    float GetDeltaTime();
 
 private:
     AppLog logWindow;

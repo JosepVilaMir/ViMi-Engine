@@ -14,8 +14,8 @@ enum update_status
 };
 
 // Configuration -----------
-#define SCREEN_WIDTH 1600
-#define SCREEN_HEIGHT 900
+#define SCREEN_WIDTH 1024
+#define SCREEN_HEIGHT 768
 #define FULLSCREEN false
 #define VSYNC true
 #define TITLE "ViMi Engine"

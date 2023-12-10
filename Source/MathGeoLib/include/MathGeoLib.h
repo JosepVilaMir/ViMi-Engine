@@ -18,6 +18,8 @@
 
 #pragma once
 
+//#define MATH_COLMAJOR_MATRICES
+
 #include "Geometry/GeometryAll.h"
 #include "Math/MathAll.h"
 #include "Algorithm/Random/LCG.h"

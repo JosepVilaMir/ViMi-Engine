@@ -71,6 +71,11 @@ void ModuleEditor::AddLog(const char* text)
     logWindow.AddLog(text);
 }
 
+float ModuleEditor::GetDeltaTime()
+{
+    return ImGui::GetIO().DeltaTime;
+}
+
 void ModuleEditor::ShowLogWindow()
 {
     ImGui::SetNextWindowSize(ImVec2(500, 400), ImGuiCond_FirstUseEver);
